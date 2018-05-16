@@ -12,7 +12,8 @@
 # Minimize the total number of operations.
 
 class Solution(object):
-    def moveZeroes(self, nums):
+
+     def movezeroes(self, nums):
         """
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
@@ -23,15 +24,9 @@ class Solution(object):
                 nums[i], nums[pos] = nums[pos], nums[i]
                 pos += 1
 
-    def moveZeroes2(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
-        """
-        nums.sort(cmp=lambda a, b: 0 if b else -1)
 
 if __name__ == '__main__':
     s = Solution()
-    r = s.moveZeroes([0, 1, 0, 3, 12])
-    #print (r)
+    r = s.movezeroes([0, 1, 0, 3, 12])
+    print(r)
 # print("hello world")
