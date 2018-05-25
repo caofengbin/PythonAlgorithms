@@ -23,8 +23,24 @@ class Solution:
                 return (tmpDict[target-item] + 1, i + 1)
             tmpDict[item] = i
 
+    def twoSum1(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        i = 0
+        j = len(numbers) - 1
+        while i < j:
+            tmp = numbers[i] + numbers[j]
+            if tmp == target:
+                return [i + 1, j + 1]
+            elif tmp > target:
+                j -= 1
+            elif tmp < target:
+                i += 1
 
 if __name__ == '__main__':
     s = Solution()
-    l = s.twoSum([2, 7, 11, 15],9)
+    l = s.twoSum1([2, 7, 11, 15],9)
     print(l)
