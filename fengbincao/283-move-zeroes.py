@@ -13,20 +13,23 @@
 
 class Solution(object):
 
-     def movezeroes(self, nums):
+    def moveZeroes(self, nums):
         """
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        pos = 0
-        for i in xrange(len(nums)):
-            if nums[i]:
-                nums[i], nums[pos] = nums[pos], nums[i]
-                pos += 1
+        nonZeroPointer = 0
+        for index in range(len(nums)):
+            if (nums[index] != 0):
+                nums[nonZeroPointer] = nums[index]
+                nonZeroPointer += 1
+        for index2 in range(nonZeroPointer, len(nums)):
+            nums[index2] = 0
+
+        return  nums
 
 
 if __name__ == '__main__':
     s = Solution()
-    r = s.movezeroes([0, 1, 0, 3, 12])
+    r = s.moveZeroes([0, 1, 0, 3, 12])
     print(r)
-# print("hello world")
