@@ -10,3 +10,20 @@
 # Example 2:
 # Input: "race a car"
 # Output: false
+import re
+
+class Solution:
+
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s = s.lower()
+        s = re.sub('[^a-zA-Z0-9]', '', s)
+        return s == s[::-1]
+
+if __name__ == '__main__':
+    s = Solution()
+    r = s.isPalindrome("A man, a plan, a canal: Panama")
+    print(r)
