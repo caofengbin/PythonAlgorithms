@@ -13,11 +13,9 @@
 
 class Solution(object):
 
+    # 解法1：通过双指针法，一个从数组头部开始遍历
+    # 另一个指针代表的非0元素的区间pointer,从[0,pointer)区间范围内全部代表的是非0的元素
     def moveZeroes(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
-        """
         nonZeroPointer = 0
         for index in range(len(nums)):
             if (nums[index] != 0):
@@ -26,7 +24,7 @@ class Solution(object):
         for index2 in range(nonZeroPointer, len(nums)):
             nums[index2] = 0
 
-        return  nums
+        return nums
 
 
 if __name__ == '__main__':
