@@ -12,3 +12,23 @@ class Solution:
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
+        zero_pointer = -1
+        two_pointer = len(nums)
+        index = 0
+        while index < two_pointer:
+            if nums[index] == 1:
+                index += 1
+            elif nums[index] == 2:
+                two_pointer -= 1
+                nums[index], nums[two_pointer] = nums[two_pointer], nums[index]
+            else:
+                zero_pointer += 1
+                nums[index], nums[zero_pointer] = nums[zero_pointer], nums[index]
+                index += 1
+        return nums
+
+
+if __name__ == '__main__':
+    s = Solution()
+    r = s.sortColors([2, 0, 2, 1, 1, 0])
+    print(r)
